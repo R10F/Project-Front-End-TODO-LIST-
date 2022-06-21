@@ -12,7 +12,11 @@ class App extends React.Component {
       <div className="container-fluid">
         <header className="bg-info">
           <h1>
-            TODO LIST <span>{this.state.Tanggal.to()} </span>
+            TODO LIST{" "}
+            <span>
+              {this.state.Tanggal.getDate()} {this.state.Tanggal.toLocaleString("en-us", { month: "long" })} &nbsp;
+              {this.state.Tanggal.getFullYear()}
+            </span>
           </h1>
         </header>
 
