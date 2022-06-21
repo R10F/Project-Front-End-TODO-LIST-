@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { Fragment } from "react";
 
 class App extends React.Component {
   constructor(props) {
@@ -28,35 +28,60 @@ class App extends React.Component {
           </h1>
         </header>
 
-        <form>
-          <div className="input-group">
-            <input type="text" className="form-control border-primary border-3 " placeholder="Enter New Todo" />
-            <button className="btn btn-primary input-group-text" type="button">
-              Add Todo
-            </button>
-          </div>
+        <Fragment>
+          <aside>
+            <div className="form-check  ">
+              <input class="form-check-input " type="radio" name="filter" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                hai
+              </label>
+            </div>
+            <div className="form-check  ">
+              <input class="form-check-input " type="radio" name="filter" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                hai
+              </label>
+            </div>
+            <div className="form-check  ">
+              <input class="form-check-input " type="radio" name="filter" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                hai
+              </label>
+            </div>
+          </aside>
+        </Fragment>
 
-          {/* <div className="form-check form-check-inline ">
+        <Fragment>
+          <form>
+            <div className="input-group">
+              <input type="text" className="form-control border-primary border-3 " placeholder="Enter New Todo" />
+              <button className="btn btn-primary input-group-text" type="button">
+                Add Todo
+              </button>
+            </div>
+
+            {/* <div className="form-check form-check-inline ">
           <input class="form-check-input " type="radio" name="filter" />
           <label class="form-check-label" for="flexRadioDefault1">
             "Low Priority"
           </label>
         </div> */}
-          {/* <div className="form-check form-check-inline ">
+            {/* <div className="form-check form-check-inline ">
           <input class="form-check-input " type="radio" name="filter" />
           <label class="form-check-label" for="flexRadioDefault1">
             "Medium Priority"
           </label>
         </div> */}
-          {/* <div className="form-check form-check-inline ">
+            {/* <div className="form-check form-check-inline ">
           <input class="form-check-input " type="radio" name="filter" />
           <label class="form-check-label" for="flexRadioDefault1">
             "High Priority"
           </label>
         </div> */}
 
-          {allLabel}
-        </form>
+            {allLabel}
+          </form>
+        </Fragment>
       </div>
     );
   }
