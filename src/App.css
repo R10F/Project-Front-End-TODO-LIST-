@@ -19,6 +19,12 @@ h1 span {
   font-weight: normal;
 }
 
+aside {
+  background-color: yellow;
+  width: 10%;
+  height: fit-content;
+}
+
 form {
   background-color: #e1f5fe;
   width: 70%;

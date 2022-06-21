@@ -36,6 +36,25 @@ class App extends React.Component {
             </button>
           </div>
 
+          {/* <div className="form-check form-check-inline ">
+          <input class="form-check-input " type="radio" name="filter" />
+          <label class="form-check-label" for="flexRadioDefault1">
+            "Low Priority"
+          </label>
+        </div> */}
+          {/* <div className="form-check form-check-inline ">
+          <input class="form-check-input " type="radio" name="filter" />
+          <label class="form-check-label" for="flexRadioDefault1">
+            "Medium Priority"
+          </label>
+        </div> */}
+          {/* <div className="form-check form-check-inline ">
+          <input class="form-check-input " type="radio" name="filter" />
+          <label class="form-check-label" for="flexRadioDefault1">
+            "High Priority"
+          </label>
+        </div> */}
+
           {allLabel}
         </form>
       </div>
