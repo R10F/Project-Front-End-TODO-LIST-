@@ -10,13 +10,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <header className="bg-info">
+        <header>
           <h1>
-            TODO LIST{" "}
-            <span>
-              {this.state.Tanggal.getDate()} {this.state.Tanggal.toLocaleString("en-us", { month: "long" })} &nbsp;
-              {this.state.Tanggal.getFullYear()}
-            </span>
+            TODO LIST <span>{this.state.Tanggal.toLocaleString("id-ID", { day: "numeric", month: "long", year: "numeric" })} &nbsp;</span>
           </h1>
         </header>
 
