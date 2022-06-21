@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { Tanggal: new Date() };
-    this.label = [["Add Todo"], ["Low Priority"], ["High Priority"]];
+    this.label = [["Low Priority"], ["Medium Priority"], ["High Priority"]];
   }
 
   render() {
