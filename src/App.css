@@ -1,3 +1,7 @@
 .text-center {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.form-check {
+  margin-right: 20rem;
+}
