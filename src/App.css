@@ -2,6 +2,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.form-check {
-  margin-right: 20rem;
+.form-check label {
+  font-family: "Roboto", sans-serif;
 }
