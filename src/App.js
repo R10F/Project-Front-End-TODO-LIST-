@@ -5,9 +5,21 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { Tanggal: new Date() };
+    this.label = [["Add Todo"], ["Low Priority"], ["High Priority"]];
   }
 
   render() {
+    let allLabel = this.label.map((labels) => {
+      return (
+        <div className="form-check form-check-inline ">
+          <input class="form-check-input " type="radio" name="filter" />
+          <label class="form-check-label" for="flexRadioDefault1">
+            {labels}
+          </label>
+        </div>
+      );
+    });
+
     return (
       <div className="container-fluid">
         <header>
@@ -24,26 +36,7 @@ class App extends React.Component {
             </button>
           </div>
 
-          <div className="form-check form-check-inline ">
-            <input class="form-check-input " type="radio" name="filter" />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Low Priority
-            </label>
-          </div>
-
-          <div className="form-check form-check-inline ">
-            <input class="form-check-input" type="radio" name="filter" />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Medium Priority
-            </label>
-          </div>
-
-          <div className="form-check form-check-inline ">
-            <input class="form-check-input" type="radio" name="filter" />
-            <label class="form-check-label" for="flexRadioDefault1">
-              High Priority
-            </label>
-          </div>
+          {allLabel}
         </form>
       </div>
     );
