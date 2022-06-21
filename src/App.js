@@ -12,7 +12,7 @@ class App extends React.Component {
       <div className="container-fluid">
         <header>
           <h1>
-            TODO LIST <span>{this.state.Tanggal.toLocaleString("id-ID", { day: "numeric", month: "long", year: "numeric" })} </span>
+            TODO LIST <span>{this.state.Tanggal.toLocaleString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</span>
           </h1>
         </header>
 
