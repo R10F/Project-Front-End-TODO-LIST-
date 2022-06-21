@@ -5,26 +5,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { Tanggal: new Date() };
-    this.label = [["Low Priority"], ["Medium Priority"], ["High Priority"]];
   }
 
   render() {
-    let allLabel = this.label.map((labels) => {
-      return (
-        <div className="form-check form-check-inline ">
-          <input class="form-check-input " type="radio" name="filter" />
-          <label class="form-check-label" for="flexRadioDefault1">
-            {labels}
-          </label>
-        </div>
-      );
-    });
-
     return (
       <div className="container-fluid">
         <header>
           <h1>
-            TODO LIST <span>{this.state.Tanggal.toLocaleString("id-ID", { day: "numeric", month: "long", year: "numeric" })} &nbsp;</span>
+            TODO LIST <span>{this.state.Tanggal.toLocaleString("id-ID", { day: "numeric", month: "long", year: "numeric" })} </span>
           </h1>
         </header>
 
@@ -60,26 +48,24 @@ class App extends React.Component {
               </button>
             </div>
 
-            {/* <div className="form-check form-check-inline ">
-          <input class="form-check-input " type="radio" name="filter" />
-          <label class="form-check-label" for="flexRadioDefault1">
-            "Low Priority"
-          </label>
-        </div> */}
-            {/* <div className="form-check form-check-inline ">
-          <input class="form-check-input " type="radio" name="filter" />
-          <label class="form-check-label" for="flexRadioDefault1">
-            "Medium Priority"
-          </label>
-        </div> */}
-            {/* <div className="form-check form-check-inline ">
-          <input class="form-check-input " type="radio" name="filter" />
-          <label class="form-check-label" for="flexRadioDefault1">
-            "High Priority"
-          </label>
-        </div> */}
-
-            {allLabel}
+            <div className="form-check form-check-inline ">
+              <input class="form-check-input " type="radio" name="filter" defaultChecked />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Low Priority
+              </label>
+            </div>
+            <div className="form-check form-check-inline ">
+              <input class="form-check-input " type="radio" name="filter" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Medium Priority
+              </label>
+            </div>
+            <div className="form-check form-check-inline ">
+              <input class="form-check-input " type="radio" name="filter" />
+              <label class="form-check-label" for="flexRadioDefault1">
+                High Priority
+              </label>
+            </div>
           </form>
         </Fragment>
       </div>
