@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import Swal from "sweetalert2";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +12,7 @@ class App extends React.Component {
       <div className="container-fluid">
         <header className="bg-info">
           <h1>
-            TODO LIST <span>{this.state.Tanggal.toDateString()} </span>
+            TODO LIST <span>{this.state.Tanggal.to()} </span>
           </h1>
         </header>
 
