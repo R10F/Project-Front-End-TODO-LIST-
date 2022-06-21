@@ -1,6 +1,5 @@
 import "./App.css";
 import React from "react";
-import { SiAddthis } from "react-icons/si";
 
 class App extends React.Component {
   render() {
