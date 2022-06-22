@@ -2,6 +2,12 @@ import React from "react";
 import Swal from "sweetalert2";
 
 class ListItem extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.taskName = this.props.taskDetails[0];
+    this.priority = this.props.taskDetails[1];
+  }
   confirmDelete = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -19,15 +25,24 @@ class ListItem extends React.Component {
   };
 
   render() {
+    let priorityColor = '#007684';
+    if      (this.priority === 'Medium') priorityColor = '#f7e593';
+    else if (this.priority === 'High')   priorityColor = '#c03202';
+
     return (
       <li className="list-group-item">
         <div className="d-flex align-items-center justify-content-between p-3">
-          <div>This is some text within a card body.</div>
+          <div>{ this.taskName }</div>
           <div>
-            <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <span>
+              <span className="me-2" style={{ backgroundColor: priorityColor }}>0</span>
+              { this.priority + ' Priority' }
+            </span>
+
+            <button type="button" className="btn btn-warning ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Edit
             </button>
-            <button type="button" className="btn btn-danger ms-3" onClick={this.confirmDelete}>
+            <button type="button" className="btn btn-danger ms-3" onClick={ this.confirmDelete }>
               Delete
             </button>
           </div>
@@ -45,7 +60,7 @@ class ListItem extends React.Component {
               <div className="modal-body">
                 <div class="mb-4">
                   <label for={ 'editTaskModal-' + 1 } class="form-label">Task</label>
-                  <input type="text" class="form-control" id={ 'editTaskModal-' + 1 } value="name@example.com" />
+                  <input type="text" class="form-control" id={ 'editTaskModal-' + 1 } defaultValue={ this.taskName } />
                 </div>
 
                 <div className="form-check">
