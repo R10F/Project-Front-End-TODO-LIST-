@@ -1,4 +1,5 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 class AddTask extends React.Component {
   constructor(props) {
@@ -40,9 +41,14 @@ class AddTask extends React.Component {
   addTask = (e) => {
     e.preventDefault();
 
+    let todo = document.querySelector("form input.form-control").value;
+
+    if (todo === "") {
+      Swal.fire({ icon: "warning", text: "Enter Todo List" });
+      todo.focus();
+    }
     const task = e.target.querySelector("input").value;
     const priority = e.target.querySelector("input:checked").value;
-
     this.props.addTask([task, priority]);
   };
 }

@@ -25,24 +25,26 @@ class ListItem extends React.Component {
   };
 
   render() {
-    let priorityColor = '#007684';
-    if      (this.priority === 'Medium') priorityColor = '#f7e593';
-    else if (this.priority === 'High')   priorityColor = '#c03202';
+    let priorityColor = "#007684";
+    if (this.priority === "Medium") priorityColor = "#f7e593";
+    else if (this.priority === "High") priorityColor = "#c03202";
 
     return (
       <li className="list-group-item">
         <div className="d-flex align-items-center justify-content-between p-3">
-          <div>{ this.taskName }</div>
+          <div>{this.taskName}</div>
           <div>
             <span>
-              <span className="me-2" style={{ backgroundColor: priorityColor }}>0</span>
-              { this.priority + ' Priority' }
+              <span className="me-2" style={{ backgroundColor: priorityColor }}>
+                0
+              </span>
+              {this.priority + " Priority"}
             </span>
 
             <button type="button" className="btn btn-warning ms-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Edit
             </button>
-            <button type="button" className="btn btn-danger ms-3" onClick={ this.confirmDelete }>
+            <button type="button" className="btn btn-danger ms-3" onClick={this.confirmDelete}>
               Delete
             </button>
           </div>
@@ -59,25 +61,27 @@ class ListItem extends React.Component {
               </div>
               <div className="modal-body">
                 <div class="mb-4">
-                  <label for={ 'editTaskModal-' + 1 } class="form-label">Task</label>
-                  <input type="text" class="form-control" id={ 'editTaskModal-' + 1 } defaultValue={ this.taskName } />
+                  <label for={"editTaskModal-" + 1} class="form-label">
+                    Task
+                  </label>
+                  <input type="text" class="form-control" id={"editTaskModal-" + 1} defaultValue={this.taskName} />
                 </div>
 
                 <div className="form-check">
-                  <input className="form-check-input" id={ 'lowPriorityModal-' + 1 } type="radio" name="priority" />
-                  <label className="form-check-label" htmlFor={ 'lowPriorityModal-' + 1 }>
+                  <input className="form-check-input" id={"lowPriorityModal-" + 1} type="radio" name="priority" />
+                  <label className="form-check-label" htmlFor={"lowPriorityModal-" + 1}>
                     Low Priority
                   </label>
                 </div>
                 <div className="form-check">
-                  <input className="form-check-input" id={ 'mediumPriorityModal-' + 1 } type="radio" name="priority" />
-                  <label className="form-check-label" htmlFor={ 'mediumPriorityModal-' + 1 }>
+                  <input className="form-check-input" id={"mediumPriorityModal-" + 1} type="radio" name="priority" />
+                  <label className="form-check-label" htmlFor={"mediumPriorityModal-" + 1}>
                     Medium Priority
                   </label>
                 </div>
                 <div className="form-check">
-                  <input className="form-check-input" id={ 'highPriorityModal-' + 1 } type="radio" name="priority" />
-                  <label className="form-check-label" htmlFor={ 'highPriorityModal-' + 1 }>
+                  <input className="form-check-input" id={"highPriorityModal-" + 1} type="radio" name="priority" />
+                  <label className="form-check-label" htmlFor={"highPriorityModal-" + 1}>
                     High Priority
                   </label>
                 </div>
