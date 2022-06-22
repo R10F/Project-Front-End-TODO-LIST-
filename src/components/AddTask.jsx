@@ -7,7 +7,7 @@ class AddTask extends React.Component {
 
   render() {
     return (
-      <form onSubmit={ this.addTask }>
+      <form onSubmit={this.addTask}>
         <div className="input-group mb-3">
           <input type="text" className="form-control border-primary border-3 " placeholder="Enter New Todo" />
           <button className="btn btn-primary input-group-text" type="submit">
@@ -40,11 +40,11 @@ class AddTask extends React.Component {
   addTask = (e) => {
     e.preventDefault();
 
-    const task     = e.target.querySelector('input').value;
-    const priority = e.target.querySelector('input:checked').value;
+    const task = e.target.querySelector("input").value;
+    const priority = e.target.querySelector("input:checked").value;
 
-    this.props.addTask([ task, priority ]);
-  }
+    this.props.addTask([task, priority]);
+  };
 }
 
 export default AddTask;
