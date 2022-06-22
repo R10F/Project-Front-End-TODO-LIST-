@@ -13,7 +13,7 @@ class App extends React.Component {
 
         <div className="d-flex">
           <Sidebar />
-          
+
           <div className="w-100">
             <AddTask />
 
