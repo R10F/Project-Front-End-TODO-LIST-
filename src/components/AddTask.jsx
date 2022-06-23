@@ -1,10 +1,15 @@
 import React from "react";
 
 class AddTask extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  addTask = (e) => {
+    e.preventDefault();
 
+    const task     = e.target.querySelector('input').value;
+    const priority = e.target.querySelector('input:checked').value;
+
+    this.props.addTask([ task, priority ]);
+  }
+  
   render() {
     return (
       <form onSubmit={ this.addTask }>
@@ -35,15 +40,6 @@ class AddTask extends React.Component {
         </div>
       </form>
     );
-  }
-
-  addTask = (e) => {
-    e.preventDefault();
-
-    const task     = e.target.querySelector('input').value;
-    const priority = e.target.querySelector('input:checked').value;
-
-    this.props.addTask([ task, priority ]);
   }
 }
 

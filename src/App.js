@@ -17,8 +17,19 @@ class App extends React.Component {
     });
   }
 
-  editTask = () => {}
-  deleteTask = () => {}
+  editTask = (id, editedTask) => {
+    this.setState(state => {
+      state.taskList[id] = editedTask;
+      return { taskList: state.taskList }
+    });
+  }
+
+  deleteTask = (id) => {
+    this.setState(state => {
+      state.taskList.splice(id, 1);
+      return { taskList: state.taskList }
+    });
+  }
 
   render() {
     return (
@@ -45,7 +56,6 @@ class App extends React.Component {
                     );
                   })
                 }
-                <ListItem id={ 99 } taskDetails={ ['Task', 'Low'] } />
               </ul>
             </div>
           </div>
