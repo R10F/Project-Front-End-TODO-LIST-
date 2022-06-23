@@ -42,7 +42,33 @@ class ListItem extends React.Component {
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div className="modal-body">...</div>
+              <div className="modal-body">
+                <div class="mb-4">
+                  <label for={"editTaskModal-" + 1} class="form-label">
+                    Task
+                  </label>
+                  <input type="text" class="form-control" id={"editTaskModal-" + 1} value="name@example.com" />
+                </div>
+
+                <div className="form-check">
+                  <input className="form-check-input" id={"lowPriorityModal-" + 1} type="radio" name="priority" />
+                  <label className="form-check-label" htmlFor={"lowPriorityModal-" + 1}>
+                    Low Priority
+                  </label>
+                </div>
+                <div className="form-check">
+                  <input className="form-check-input" id={"mediumPriorityModal-" + 1} type="radio" name="priority" />
+                  <label className="form-check-label" htmlFor={"mediumPriorityModal-" + 1}>
+                    Medium Priority
+                  </label>
+                </div>
+                <div className="form-check">
+                  <input className="form-check-input" id={"highPriorityModal-" + 1} type="radio" name="priority" />
+                  <label className="form-check-label" htmlFor={"highPriorityModal-" + 1}>
+                    High Priority
+                  </label>
+                </div>
+              </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                   Close

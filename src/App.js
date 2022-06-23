@@ -15,8 +15,13 @@ class App extends React.Component {
 
         <div className="d-flex">
           <Sidebar />
+<<<<<<< HEAD
           
           <div className="w-100 content">
+=======
+
+          <div className="w-100">
+>>>>>>> cd64f6123940f2bd8979db92fe08a18186987aca
             <AddTask />
 
             <div className="card m-5 p-2">
