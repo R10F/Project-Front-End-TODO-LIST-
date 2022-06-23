@@ -4,10 +4,12 @@
 
 header {
   background-color: #81d4fa;
+
 }
+
 h1 {
   margin: 0 50px;
-  padding: 30px 10px;
+  /* padding: 30px 10px; */
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -15,25 +17,36 @@ h1.date {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
 }
+aside{
+  box-shadow: inset;
+  height: 100%;
+  /* background-color: #f9f9f3; */
+  /* box-shadow: 5px 0 5px lightgrey; */
+}
 
-aside {
-  /* width: 70px; */
+div .content{
+  margin-left: 9%;
+}
+/* aside { */
+  /* width: 70px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* margin-top: -1px; */
-  /* position: fixed; */
-  top: 15%;
-  background-color: white;
-  height: 100%;
-  box-shadow: inset;
-}
+  margin-top: -1px;
+   position: sticky;
+  top: 13%;
+  background-color: white; */
+  /* height: 100% !important; */
+/* } */
 
+.nav-pills > .nav-link{
+  border-radius: 0 !important;
+}
 form {
   background-color: #e1f5fe;
-  width: 70%;
-  padding: 30px 30px 20px;
-  margin: 30px auto 70px;
+  /* width: 70%; */
+  /* padding: 30px 30px 20px; */
+  /* margin: 30px auto 70px; */
   border-radius: 5px;
 }
 .form-check {

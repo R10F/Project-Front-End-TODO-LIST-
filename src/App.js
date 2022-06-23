@@ -8,17 +8,21 @@ import React from "react";
 class App extends React.Component {
   render() {
     return (
-      <div className="container-fluid mb-5 pb-5">
+      <>
+      <div className="container-fluid">
+        
         <Header />
 
         <div className="d-flex">
           <Sidebar />
           
-          <div className="w-100">
+          <div className="w-100 content">
             <AddTask />
 
-            <div className="card m-3 p-2">
+            <div className="card m-5 p-2">
               <ul className="list-group list-group-flush">
+                <ListItem />
+                <ListItem />
                 <ListItem />
                 <ListItem />
                 <ListItem />
@@ -27,6 +31,31 @@ class App extends React.Component {
           </div>
         </div>
       </div>
+
+    {/* 
+      <Header /> 
+      <div className="container-fluid mb-5 pb-5 d-flex flex-column">
+        <div className="row">
+          <Sidebar />
+
+          <div className="col-10 flex-grow-1">
+            w-100
+            <AddTask />
+
+            <div className="card m-4 p-2">
+              <ul className="list-group list-group-flush">
+                <ListItem />
+                <ListItem />
+                <ListItem />
+                <ListItem />
+                <ListItem />
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    */}
+      </>
     );
   }
 }
