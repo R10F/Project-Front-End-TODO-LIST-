@@ -12,10 +12,10 @@ class App extends React.Component {
   }
 
   addTask = (newTask) => {
-    this.setState(state => {
+    this.setState((state) => {
       return { taskList: [...state.taskList, newTask] };
     });
-  }
+  };
 
   editTask = (id, editedTask) => {
     this.setState(state => {
@@ -38,9 +38,9 @@ class App extends React.Component {
 
         <div className="d-flex">
           <Sidebar />
-          
+
           <div className="w-100">
-            <AddTask addTask={ this.addTask } />
+            <AddTask addTask={this.addTask} />
 
             <div className="card m-3 p-2">
               <ul className="list-group list-group-flush">

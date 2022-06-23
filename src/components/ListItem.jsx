@@ -37,11 +37,13 @@ class ListItem extends React.Component {
     return (
       <li className="list-group-item">
         <div className="d-flex align-items-center justify-content-between p-3">
-          <div>{ this.props.taskDetails[0] }</div>
+          <div>{this.props.taskDetails[0]}</div>
           <div>
             <span>
-              <span className="me-2" style={{ backgroundColor: priorityColor }}>0</span>
-              { this.props.taskDetails[1] + ' Priority' }
+              <span className="me-2" style={{ backgroundColor: priorityColor }}>
+                0
+              </span>
+              {this.props.taskDetails[1] + " Priority"}
             </span>
 
             <button type="button" className="btn btn-warning ms-5" data-bs-toggle="modal" data-bs-target={ '#editTaskModal-' + this.props.id }>
@@ -62,6 +64,7 @@ class ListItem extends React.Component {
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
+              
               <form onSubmit={ this.editTask }>
                 <div className="modal-body">
                   <div className="mb-4">
