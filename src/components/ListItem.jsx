@@ -40,10 +40,9 @@ class ListItem extends React.Component {
           <div>{this.props.taskDetails[0]}</div>
           <div>
             <span>
-              <span className="me-2" style={{ backgroundColor: priorityColor }}>
-                0
+              <span className="me-2" style={{ color: priorityColor, fontWeight: "bold" }}>
+                {this.props.taskDetails[1] + " Priority"}
               </span>
-              {this.props.taskDetails[1] + " Priority"}
             </span>
 
             <button type="button" className="btn btn-warning ms-5" data-bs-toggle="modal" data-bs-target={"#editTaskModal-" + this.props.id}>
