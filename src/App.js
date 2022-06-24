@@ -33,19 +33,26 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid mb-5 pb-5">
+      <div className="container-fluid">
         <Header />
 
         <div className="d-flex">
           <Sidebar />
-
-          <div className="w-100">
+          
+          <div className="w-100 content">
             <AddTask addTask={this.addTask} />
 
-            <div className="card m-3 p-2 ">
+            <div className="card m-5 p-2 ">
               <ul className="list-group list-group-flush">
                 {this.state.taskList.map((item, index) => {
-                  return <ListItem id={index} taskDetails={item} editTask={this.editTask} deleteTask={this.deleteTask} />;
+                  return (
+                    <ListItem
+                      id={index}
+                      taskDetails={item}
+                      editTask={this.editTask}
+                      deleteTask={this.deleteTask}
+                    />
+                  );
                 })}
               </ul>
             </div>
