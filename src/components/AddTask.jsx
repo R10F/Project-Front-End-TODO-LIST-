@@ -4,12 +4,12 @@ class AddTask extends React.Component {
   addTask = (e) => {
     e.preventDefault();
 
-    const task     = e.target.querySelector('input').value;
-    const priority = e.target.querySelector('input:checked').value;
+    const task = e.target.querySelector("input").value;
+    const priority = e.target.querySelector("input:checked").value;
 
-    this.props.addTask([ task, priority ]);
-  }
-  
+    this.props.addTask([task, priority]);
+  };
+
   render() {
     return (
       <form onSubmit={this.addTask}>

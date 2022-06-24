@@ -5,11 +5,11 @@ class ListItem extends React.Component {
   editTask = (e) => {
     e.preventDefault();
 
-    const task     = e.target.querySelector('input').value;
-    const priority = e.target.querySelector('input:checked').value;
+    const task = e.target.querySelector("input").value;
+    const priority = e.target.querySelector("input:checked").value;
 
-    this.props.editTask(this.props.id, [ task, priority ]);
-  }
+    this.props.editTask(this.props.id, [task, priority]);
+  };
 
   deleteTask = () => {
     Swal.fire({
@@ -30,9 +30,9 @@ class ListItem extends React.Component {
   };
 
   render() {
-    let priorityColor = '#007684';
-    if      (this.props.taskDetails[1] === 'Medium') priorityColor = '#f7e593';
-    else if (this.props.taskDetails[1] === 'High')   priorityColor = '#c03202';
+    let priorityColor = "#007684";
+    if (this.props.taskDetails[1] === "Medium") priorityColor = "#f7e593";
+    else if (this.props.taskDetails[1] === "High") priorityColor = "#c03202";
 
     return (
       <li className="list-group-item">
@@ -46,16 +46,16 @@ class ListItem extends React.Component {
               {this.props.taskDetails[1] + " Priority"}
             </span>
 
-            <button type="button" className="btn btn-warning ms-5" data-bs-toggle="modal" data-bs-target={ '#editTaskModal-' + this.props.id }>
+            <button type="button" className="btn btn-warning ms-5" data-bs-toggle="modal" data-bs-target={"#editTaskModal-" + this.props.id}>
               Edit
             </button>
-            <button type="button" className="btn btn-danger ms-3" onClick={ this.deleteTask }>
+            <button type="button" className="btn btn-danger ms-3" onClick={this.deleteTask}>
               Delete
             </button>
           </div>
         </div>
 
-        <div className="modal fade" id={ 'editTaskModal-' + this.props.id } tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id={"editTaskModal-" + this.props.id} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
@@ -64,29 +64,31 @@ class ListItem extends React.Component {
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              
-              <form onSubmit={ this.editTask }>
+
+              <form onSubmit={this.editTask}>
                 <div className="modal-body">
                   <div className="mb-4">
-                    <label htmlFor={ 'editTaskModalInput-' + this.props.id } className="form-label">Task</label>
-                    <input type="text" className="form-control" id={ 'editTaskModalInput-' + this.props.id } defaultValue={ this.props.taskDetails[0] } />
+                    <label htmlFor={"editTaskModalInput-" + this.props.id} className="form-label">
+                      Task
+                    </label>
+                    <input type="text" className="form-control" id={"editTaskModalInput-" + this.props.id} defaultValue={this.props.taskDetails[0]} />
                   </div>
 
                   <div className="form-check">
-                    <input className="form-check-input" id={ 'lowPriorityModal-' + this.props.id } type="radio" value="Low" name="priority" defaultChecked={ this.props.taskDetails[1] === 'Low' } />
-                    <label className="form-check-label" htmlFor={ 'lowPriorityModal-' + this.props.id }>
+                    <input className="form-check-input" id={"lowPriorityModal-" + this.props.id} type="radio" value="Low" name="priority" defaultChecked={this.props.taskDetails[1] === "Low"} />
+                    <label className="form-check-label" htmlFor={"lowPriorityModal-" + this.props.id}>
                       Low Priority
                     </label>
                   </div>
                   <div className="form-check">
-                    <input className="form-check-input" id={ 'mediumPriorityModal-' + this.props.id } type="radio" value="Medium" name="priority" defaultChecked={ this.props.taskDetails[1] === 'Medium' } />
-                    <label className="form-check-label" htmlFor={ 'mediumPriorityModal-' + this.props.id }>
+                    <input className="form-check-input" id={"mediumPriorityModal-" + this.props.id} type="radio" value="Medium" name="priority" defaultChecked={this.props.taskDetails[1] === "Medium"} />
+                    <label className="form-check-label" htmlFor={"mediumPriorityModal-" + this.props.id}>
                       Medium Priority
                     </label>
                   </div>
                   <div className="form-check">
-                    <input className="form-check-input" id={ 'highPriorityModal-' + this.props.id } type="radio" value="High" name="priority" defaultChecked={ this.props.taskDetails[1] === 'High' } />
-                    <label className="form-check-label" htmlFor={ 'highPriorityModal-' + this.props.id }>
+                    <input className="form-check-input" id={"highPriorityModal-" + this.props.id} type="radio" value="High" name="priority" defaultChecked={this.props.taskDetails[1] === "High"} />
+                    <label className="form-check-label" htmlFor={"highPriorityModal-" + this.props.id}>
                       High Priority
                     </label>
                   </div>

@@ -11,6 +11,17 @@ class App extends React.Component {
     this.state = { taskList: [] };
   }
 
+  componentWillMount() {
+    localStorage.getItem("todo") &&
+      this.setState({
+        taskList: JSON.parse(localStorage.getItem("todo")),
+      });
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("todo", JSON.stringify(nextState.taskList));
+  }
+
   addTask = (newTask) => {
     this.setState((state) => {
       return { taskList: [...state.taskList, newTask] };
@@ -26,8 +37,8 @@ class App extends React.Component {
 
   deleteTask = (id) => {
     this.state.taskList.splice(id, 1);
-    this.setState(state => {
-      return { taskList: state.taskList }
+    this.setState((state) => {
+      return { taskList: state.taskList };
     });
   };
 
