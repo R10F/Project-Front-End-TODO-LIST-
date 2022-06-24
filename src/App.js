@@ -21,7 +21,6 @@ class App extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem("todo", JSON.stringify(nextState.taskList));
   }
-
   addTask = (newTask) => {
     this.setState((state) => {
       return { taskList: [...state.taskList, newTask] };

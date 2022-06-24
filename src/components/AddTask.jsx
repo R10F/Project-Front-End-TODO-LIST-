@@ -14,7 +14,7 @@ class AddTask extends React.Component {
     return (
       <form onSubmit={this.addTask}>
         <div className="input-group mb-3">
-          <input type="text" className="form-control border-primary border-3 " placeholder="Please Enter Your First Task" />
+          <input type="text" className="form-control border-primary border-3 " placeholder="Please Enter Your First Task" required />
           <button className="btn btn-primary input-group-text" type="submit">
             Add Task
           </button>
