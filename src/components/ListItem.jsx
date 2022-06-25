@@ -2,15 +2,24 @@ import React from "react";
 import Swal from "sweetalert2";
 
 class ListItem extends React.Component {
+  markAsDone = (e) => {
+    e.preventDefault();
+
+    const task     = this.props.taskDetails[0];
+    const priority = this.props.taskDetails[1];
+    const completed= true;
+    this.props.markAsDone(this.props.id, [task,priority,completed]);
+  }
+
   editTask = (e) => {
     e.preventDefault();
 
     const task     = e.target.querySelector('input').value;
     const priority = e.target.querySelector('input:checked').value;
-
-    this.props.editTask(this.props.id, [ task, priority ]);
+    const completed = this.props.taskDetails[2];
+    this.props.editTask(this.props.id, [ task, priority, completed ]);
   }
-
+  
   deleteTask = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -34,10 +43,18 @@ class ListItem extends React.Component {
     if      (this.props.taskDetails[1] === 'Medium') priorityColor = '#f7e593';
     else if (this.props.taskDetails[1] === 'High')   priorityColor = '#c03202';
 
+    let taskColor = "temp";
+    let displayButton = "";
+    const completed = this.props.taskDetails[2];
+    if (completed) {
+      taskColor = "bg-green";
+      displayButton = "none";
+    }
+
     return (
       <li className="list-group-item">
         <div className="d-flex align-items-center justify-content-between p-3">
-          <div>{this.props.taskDetails[0]}</div>
+          <div className={taskColor}>{this.props.taskDetails[0]}</div>
           <div>
             <span>
               <span className="me-2" style={{ backgroundColor: priorityColor }}>
@@ -46,7 +63,10 @@ class ListItem extends React.Component {
               {this.props.taskDetails[1] + " Priority"}
             </span>
 
-            <button type="button" className="btn btn-warning ms-5" data-bs-toggle="modal" data-bs-target={ '#editTaskModal-' + this.props.id }>
+            <button type="button" className="btn btn-success ms-5" onClick={ this.markAsDone } style={{display : displayButton}}>
+              Done
+            </button>
+            <button type="button" className="btn btn-warning ms-3" data-bs-toggle="modal" data-bs-target={ '#editTaskModal-' + this.props.id } style={{display : displayButton}}>
               Edit
             </button>
             <button type="button" className="btn btn-danger ms-3" onClick={ this.deleteTask }>
