@@ -21,6 +21,7 @@ class App extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem("todo", JSON.stringify(nextState.taskList));
   }
+
   addTask = (newTask) => {
     this.setState((state) => {
       return { taskList: [...state.taskList, newTask] };
@@ -44,11 +45,9 @@ class App extends React.Component {
   render() {
     let allItems = this.state.taskList.map((item, index) => {
       return (
-        <div className="card m-3 p-2 ">
-          <ul className="list-group list-group-flush">
-            <ListItem id={index} taskDetails={item} editTask={this.editTask} deleteTask={this.deleteTask} />
-          </ul>
-        </div>
+        <ul className="list-group list-group-flush">
+          <ListItem id={index} taskDetails={item} editTask={this.editTask} deleteTask={this.deleteTask} />
+        </ul>
       );
     });
 
@@ -61,8 +60,7 @@ class App extends React.Component {
 
           <div className="w-100">
             <AddTask addTask={this.addTask} />
-
-            {allItems}
+            <div className="card m-3 p-2 ">{allItems}</div>
           </div>
         </div>
       </div>
