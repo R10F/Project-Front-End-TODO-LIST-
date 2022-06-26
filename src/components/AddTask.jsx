@@ -6,13 +6,13 @@ class AddTask extends React.Component {
 
     const task = e.target.querySelector("input").value;
     const priority = e.target.querySelector("input:checked").value;
+    const completed = false;
 
-    this.props.addTask([task, priority]);
+    this.props.addTask([task, priority, completed]);
   };
-
   render() {
     return (
-      <form onSubmit={this.addTask}>
+      <form onSubmit={this.addTask} className="add-task m-5 p-4">
         <div className="input-group mb-3">
           <input type="text" className="form-control border-primary border-3 " placeholder="Please Enter Your First Task" required />
           <button className="btn btn-primary input-group-text" type="submit">
