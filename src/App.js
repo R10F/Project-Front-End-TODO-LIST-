@@ -1,6 +1,6 @@
 import "./App.css";
 import Layout from "./layout/Layout";
-import Tasks from "./components/Tasks"
+import Tasks from "./components/Tasks";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
