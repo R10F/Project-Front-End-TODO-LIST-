@@ -12,14 +12,13 @@ class AddTask extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.addTask}>
+      <form onSubmit={this.addTask} className="add-task m-5 p-4">
         <div className="input-group mb-3">
           <input type="text" className="form-control border-primary border-3 " placeholder="Please Enter Your First Task" required />
           <button className="btn btn-primary input-group-text" type="submit">
             Add Task
           </button>
         </div>
-
         <div className="form-check form-check-inline">
           <input className="form-check-input" id="lowPriority" type="radio" value="Low" name="priority" defaultChecked />
           <label className="form-check-label" htmlFor="lowPriority">
