@@ -6,10 +6,10 @@ class AddTask extends React.Component {
 
     const task = e.target.querySelector("input").value;
     const priority = e.target.querySelector("input:checked").value;
+    const completed = false;
 
-    this.props.addTask([task, priority]);
+    this.props.addTask([task, priority, completed]);
   };
-
   render() {
     return (
       <form onSubmit={this.addTask} className="add-task m-5 p-4">
@@ -19,6 +19,7 @@ class AddTask extends React.Component {
             Add Task
           </button>
         </div>
+
         <div className="form-check form-check-inline">
           <input className="form-check-input" id="lowPriority" type="radio" value="Low" name="priority" defaultChecked />
           <label className="form-check-label" htmlFor="lowPriority">

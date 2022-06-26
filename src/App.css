@@ -24,6 +24,10 @@ aside {
   border-radius: 0 !important;
 }
 
+.bg-green{
+  background-color: #C8E6C9;
+}
+
 div .content {
   margin-left: 9%;
 }
