@@ -48,6 +48,7 @@ class Tasks extends React.Component {
       return { taskList: state.taskList };
     });
   };
+
   render() {
     let allItem = this.state.taskList.filter(this.handleFilter).map((item, index) => {
       return <ListItem id={index} taskDetails={item} editTask={this.editTask} deleteTask={this.deleteTask} markAsDone={this.markAsDone} />;
@@ -55,9 +56,10 @@ class Tasks extends React.Component {
     return (
       <div className="w-100 content">
         <AddTask addTask={this.addTask} />
-        <div className="card m-5 p-2">
-          <ul className="list-group list-group-flush">{allItem}</ul>
-        </div>
+
+        <ul className="list-group list-group-flush rounded m-4 p-2">
+          <li className="list-group-item">{allItem}</li>
+        </ul>
       </div>
     );
   }

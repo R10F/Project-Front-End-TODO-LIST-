@@ -5,21 +5,21 @@ class ListItem extends React.Component {
   markAsDone = (e) => {
     e.preventDefault();
 
-    const task     = this.props.taskDetails[0];
+    const task = this.props.taskDetails[0];
     const priority = this.props.taskDetails[1];
-    const completed= true;
-    this.props.markAsDone(this.props.id, [task,priority,completed]);
-  }
+    const completed = true;
+    this.props.markAsDone(this.props.id, [task, priority, completed]);
+  };
 
   editTask = (e) => {
     e.preventDefault();
 
-    const task     = e.target.querySelector('input').value;
-    const priority = e.target.querySelector('input:checked').value;
+    const task = e.target.querySelector("input").value;
+    const priority = e.target.querySelector("input:checked").value;
     const completed = this.props.taskDetails[2];
-    this.props.editTask(this.props.id, [ task, priority, completed ]);
-  }
-  
+    this.props.editTask(this.props.id, [task, priority, completed]);
+  };
+
   deleteTask = () => {
     Swal.fire({
       title: "Are you sure?",
@@ -63,10 +63,10 @@ class ListItem extends React.Component {
               {this.props.taskDetails[1] + " Priority"}
             </span>
 
-            <button type="button" className="btn btn-success ms-5" onClick={ this.markAsDone } style={{display : displayButton}}>
+            <button type="button" className="btn btn-success ms-5" onClick={this.markAsDone} style={{ display: displayButton }}>
               Done
             </button>
-            <button type="button" className="btn btn-warning ms-3" data-bs-toggle="modal" data-bs-target={ '#editTaskModal-' + this.props.id } style={{display : displayButton}}>
+            <button type="button" className="btn btn-warning ms-3" data-bs-toggle="modal" data-bs-target={"#editTaskModal-" + this.props.id} style={{ display: displayButton }}>
               Edit
             </button>
             <button type="button" className="btn btn-danger ms-3" onClick={this.deleteTask}>
