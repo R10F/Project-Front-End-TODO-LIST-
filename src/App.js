@@ -23,27 +23,30 @@ class App extends React.Component {
 
   functions = {
     markAsDone: (id) => {
-      // this.state.taskList[id][2] = true;
-      this.setState((state) => {
-        return { taskList: state.taskList };
-      });
+
+      let updatedTask = this.state.taskList;
+      updatedTask[id][2] = true;
+
+      this.setState({ taskList: updatedTask });
+
     },
+
     addTask: (newTask) => {
-      this.setState((state) => {
-        return { taskList: [...state.taskList, newTask] };
-      });
+      this.setState({ taskList: [...this.state.taskList, newTask] });
     },
+
     editTask: (id, editedTask) => {
-      this.setState((state) => {
-        state.taskList[id] = editedTask;
-        return { taskList: state.taskList };
-      });
+      let updatedTask = this.state.taskList;
+      updatedTask[id] = editedTask;
+
+      this.setState({ taskList: updatedTask });
     },
+
     deleteTask: (id) => {
-      this.state.taskList.splice(id, 1);
-      this.setState((state) => {
-        return { taskList: state.taskList }
-      });
+      let remainingTask = this.state.taskList;
+      remainingTask.splice(id, 1);
+
+      this.setState({ taskList: remainingTask });
     }
   }
 
