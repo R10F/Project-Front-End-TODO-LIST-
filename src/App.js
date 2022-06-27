@@ -41,7 +41,7 @@ class App extends React.Component {
     },
     deleteTask: (id) => {
       this.state.taskList.splice(id, 1);
-      this.setState(state => {
+      this.setState((state) => {
         return { taskList: state.taskList }
       });
     }
