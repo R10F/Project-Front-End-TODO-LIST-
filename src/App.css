@@ -24,12 +24,19 @@ aside {
   border-radius: 0 !important;
 }
 
-.bg-green{
+.bg-green {
   background-color: #C8E6C9;
 }
 
 div .content {
   margin-left: 9%;
+}
+
+.priority-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
 form.add-task {

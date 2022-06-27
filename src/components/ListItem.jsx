@@ -12,8 +12,9 @@ class ListItem extends React.Component {
     const task = e.target.querySelector('input').value;
     const priority = e.target.querySelector('input:checked').value;
     const completed = this.props.taskDetails[2];
+    const id = this.props.taskDetails[3];console.log([task, priority, completed, id]);
 
-    this.props.editTask(this.props.id, [task, priority, completed]);
+    this.props.editTask(this.props.id, [task, priority, completed, id]);
   }
 
   deleteTask = () => {
@@ -52,20 +53,18 @@ class ListItem extends React.Component {
         <div className="d-flex align-items-center justify-content-between p-3">
           <div className={taskColor}>{this.props.taskDetails[0]}</div>
           <div>
-            <span>
-              <span className="me-2" style={{ backgroundColor: priorityColor }}>
-                0
-              </span>
+            <span className="me-5">
+              <span className="priority-indicator me-2" style={{ backgroundColor: priorityColor }}></span>
               {this.props.taskDetails[1] + " Priority"}
             </span>
 
-            <button type="button" className="btn btn-success ms-5" onClick={this.markAsDone} style={{ display: displayButton }}>
+            <button type="button" className="btn btn-success me-3" onClick={this.markAsDone} style={{ display: displayButton }}>
               Done
             </button>
-            <button type="button" className="btn btn-warning ms-3" data-bs-toggle="modal" data-bs-target={'#editTaskModal-' + this.props.id} style={{ display: displayButton }}>
+            <button type="button" className="btn btn-warning me-3" data-bs-toggle="modal" data-bs-target={'#editTaskModal-' + this.props.id} style={{ display: displayButton }}>
               Edit
             </button>
-            <button type="button" className="btn btn-danger ms-3" onClick={this.deleteTask}>
+            <button type="button" className="btn btn-danger" onClick={this.deleteTask}>
               Delete
             </button>
           </div>
