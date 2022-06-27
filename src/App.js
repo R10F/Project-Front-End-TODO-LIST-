@@ -23,8 +23,8 @@ class App extends React.Component {
 
   functions = {
     markAsDone: (id) => {
+      this.state.taskList[id][2] = true;
       this.setState((state) => {
-        state.taskList[id][2] = true;
         return { taskList: state.taskList };
       });
     },
