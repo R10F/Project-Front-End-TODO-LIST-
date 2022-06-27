@@ -23,7 +23,6 @@ class App extends React.Component {
 
   functions = {
     markAsDone: (id) => {
-      console.log(id);
       let updatedTask = this.state.taskList.map(item => {
         if (item[3] === id)
           item[2] = true;

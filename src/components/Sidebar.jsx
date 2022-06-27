@@ -1,8 +1,27 @@
 import React from "react";
+import Swal from "sweetalert2";
 import { FiList, FiClock, FiCheckCircle } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 
 class Sidebar extends React.Component {
+  resetTask = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+
+        this.props.resetTask();
+      }
+    });
+  };
+
   render() {
     const activeClassName = "nav-link py-3 border-bottom active";
     const notactiveClassName = "nav-link py-3 border-bottom";
@@ -30,7 +49,7 @@ class Sidebar extends React.Component {
           </li>
         </ul>
 
-        <button className="btn btn-primary w-75 mb-4" onClick={this.props.resetTask}>Reset</button>
+        <button className="btn btn-primary w-75 mb-4" onClick={this.resetTask}>Reset</button>
       </aside>
     );
   }
