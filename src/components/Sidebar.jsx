@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
     const notactiveClassName = "nav-link py-3 border-bottom";
 
     return (
-      <aside className="d-flex flex-column align-items-center justify-content-between shadow position-fixed top-0 mt-5">
+      <aside className="d-flex flex-column align-items-center justify-content-between shadow position-fixed top-0" style={{ marginTop: '60px' }}>
         <ul className="nav nav-pills flex-column text-center mt-lg-4">
           <li className="nav-item" value="all">
             <NavLink to="/" className={({ isActive }) => isActive ? activeClassName : notactiveClassName}>
