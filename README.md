@@ -1,5 +1,5 @@
 # Project Mata Kuliah Pengembangan Web Front-End Tim Apple
-Fakultas Informatika, Universitas Mikroskil
+Program Studi Teknik Informatika, Fakultas Informatika, Universitas Mikroskil
 
 ## Anggota
 1. Erin Gunawan (211110101)
