@@ -1,3 +1,11 @@
+# Project Mata Kuliah Pengembangan Web Front-End Tim Apple
+Fakultas Informatika, Universitas Mikroskil
+
+## Anggota
+1. Erin Gunawan (211110101)
+2. Farrell Rio Fa (211111601)
+3. Frederic Davidsen (211110462)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
